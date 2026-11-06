@@ -15,9 +15,9 @@ const RICK_BYTES: &'static [u8] = include_bytes!("/tmp/rick-roll.gif");
 
 mod ytls;
 
-const CA: &'static str = "../../../tls/test_certs/ca.prime256v1.crt";
-const CERT: &'static str = "../../../tls/test_certs/rustcryp.to.prime256v1.ca_signed.crt";
-const KEY: &'static str = "../../../tls/test_certs/rustcryp.to.prime256v1.pem";
+const CA: &'static str = "test_certs/ca.prime256v1.crt";
+const CERT: &'static str = "test_certs/rustcryp.to.prime256v1.ca_signed.crt";
+const KEY: &'static str = "test_certs/rustcryp.to.prime256v1.pem";
 
 // Uncomment below & constructor to use cleartext HTTP only
 /*
@@ -54,7 +54,7 @@ fn rustls_server_blueprints() -> Blueprints<1, Orbits<_, _, _>> {
 } */
 
 fn main() {
-    let addr = SocketAddr::new(IpAddr::V4(Ipv4Addr::new(192, 168, 64, 3)), 8181);
+    let addr = SocketAddr::new(IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1)), 8181);
 
     let listener_strategy = StrategyListener::replenishing(3).fixed_fds(3);
 

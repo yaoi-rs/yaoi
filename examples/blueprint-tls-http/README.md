@@ -6,6 +6,15 @@ It requires Linux kernel 6.12 or newer and free 2MB HugeTLBs.
 
 # Usage
 
+This example assumes test.rustcryp.to resolves to 127.0.0.1 with your HTTPS client.
+
+The endpoint will spawn to https://test.rustcryp.to:8181
+
+Obtain Rick used in testing
+```ignore
+curl --output /tmp/rick-roll.gif https://media.tenor.com/Lw4_T2lRPGoAAAAM/rickroll-meme.gif
+```
+
 Generate the required TLS certificate & key material
 ```ignore
 cd test_certs; make prime256v1
